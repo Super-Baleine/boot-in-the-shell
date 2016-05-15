@@ -10,7 +10,7 @@ case $choice in
     read -p "Path of the .iso : " path_iso
     read -p "Path of the /dev/ driver (for example : /dev/sdb not /dev/sdb1) : " path_driver
     echo "Okay, processing...";
-    cat $path_iso $path_driver || echo "There's a problem... Can you start the script and check your paths again please ?";exit 0;
+    cat $path_iso $path_driver
     echo "It's okay !";exit 0;
     ;;
   "2")
