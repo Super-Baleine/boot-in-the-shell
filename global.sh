@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+echo "test of a git pull"
 
 read -p "What do you want to do ?
 1) install a image on a usb driver
