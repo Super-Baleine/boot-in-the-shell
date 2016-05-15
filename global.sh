@@ -3,14 +3,18 @@
 read -p "What do you want to do ?
 1) install a image on a usb driver
 2) remove the iso of an usb driver
-3) Exit
+3) Install a Debian jessie
+Tape 'exit' to quit
 > " choice
+if [[ $choice "exit" ]]; then
+  exit 0;
+fi
 case $choice in
   "1")
     read -p "Path of the .iso : " path_iso
     read -p "Path of the /dev/ driver (for example : /dev/sdb not /dev/sdb1) : " path_driver
     echo "Okay, processing...";
-    cat $path_iso $path_driver
+    cat $path_iso > $path_driver
     echo "It's okay !";exit 0;
     ;;
   "2")
@@ -29,6 +33,13 @@ case $choice in
     else
       exit 0;
     fi
+    ;;
+  "3")
+    wget http://cdimage.debian.org/debian-cd/8.4.0/multi-arch/iso-cd/debian-8.4.0-amd64-i386-netinst.iso
+    path_iso=$(pwd)
+    read -p "Path of the driver : " path_driver
+    cat $path_iso/debian-8.4.0-amd64-i386-netinst.iso > $path_driver
+    echo "The Debian installer is installed !"
     ;;
   *)
     echo "Don't know...":exit 0;
