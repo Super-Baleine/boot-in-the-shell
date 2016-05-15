@@ -5,9 +5,6 @@ read -p "What do you want to do ?
 2) remove the iso of an usb driver
 3) Exit
 > " choice
-if [[ $choice = "3" ]]; then
-  echo "Bye bye ! :)";exit 0;
-fi
 case $choice in
   "1")
     read -p "Path of the .iso : " path_iso
