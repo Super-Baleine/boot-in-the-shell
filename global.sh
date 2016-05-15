@@ -21,7 +21,7 @@ case $choice in
     echo Processing...
     sudo mkfs.vfat -F 32 -n $name_usb $path_driver
     echo "Finished !";
-    echo -n "Do you want to go on your usb driver ? (y|n)" choice
+    echo -n "Do you want to go on your usb driver ? (y|n)";read choice
     if [[ $choice = "y" ]]; then
       cd $path_folder;cd ../$name_usb;
       pwd;
