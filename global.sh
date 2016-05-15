@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 read -p "What do you want to do ?
 1) install a image on a usb driver
 2) remove the iso of an usb driver
